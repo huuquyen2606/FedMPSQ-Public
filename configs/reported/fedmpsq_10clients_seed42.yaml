@@ -1,0 +1,84 @@
+experiment_id: FedMPSQ
+algorithm:
+  num_server_rounds: 20
+  num_clients: 10
+  fraction_train: 1.0
+  local_epochs: 1
+  batch_size: 256
+  learning_rate: 0.001
+  optimizer: sgd
+  momentum: 0.9
+  weight_decay: 0.0001
+  proximal_mu: 0.01
+  aggregation: sample
+data:
+  partitions_dir: /kaggle/input/notebooks/tuankietnguyen6507/s01-van-thuong/ciciot2023-existing10-v3
+  partition_file: /kaggle/working/ids_fed/kaggle_frozen_partition.json
+  dataset: existing_dataset
+  source_label_space: ciciot2023_identity_34
+  target_num_classes: 34
+  client_val_ratio: 0.2
+  split_seed: 42
+  num_clients: 10
+  minority_fraction: 0.25
+model:
+  name: dcnn_bilstm
+  hidden_size: 320
+  num_blocks: 1
+  input_dim: 46
+  num_classes: 34
+  conv_channels:
+  - 64
+  - 128
+  - 128
+  kernel_size: 3
+  lstm_hidden_size: 128
+  lstm_layers: 1
+  dropout: 0.2
+  norm: layer
+method:
+  ablation: a5
+  loss: bounded_cb_lc
+  beta: 0.9999
+  w_max: 10.0
+  fedlc_tau: 1.0
+  eta_s: 0.9
+  alpha_s: 0.25
+  sparsity: 0.9
+  normalization: max
+  quant_bits: 2
+  index_codec: auto_runs
+  stochastic_rounding: false
+  error_feedback: true
+  epsilon: 1.0e-12
+  class_prior: global
+  quant_group_size: 256
+  quant_clipping: mse_refine
+  protect_small_tensors: false
+  adaptive_quant_error: null
+  downlink_bits: 32
+  sparsity_warmup_rounds: 0
+  sparsity_initial: 0.0
+  saliency_mode: online_task
+  compact_layout: true
+  block_size: 32
+  minority_head_reserve: 0.0
+  uplink_budget_bytes: 3334
+  scale_codec: log8
+  incoherent_rotation: true
+  quantizer: gaussian4
+runtime:
+  device: cuda
+  parallel_clients: 1
+  seed: 42
+  deterministic: true
+  num_workers: 0
+results:
+  dir: /kaggle/working/mpsq-uplink-v4/runs/rht_g4_b3334_seed42
+  run_name: rht_g4_b3334_seed42
+  save_round_checkpoints: true
+  save_model: true
+  resume: null
+  target_macro_f1: null
+fidelity_classification: P
+protocol_version: fedmpsq-uplink-v4

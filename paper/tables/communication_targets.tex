@@ -1,0 +1,20 @@
+\begin{table}[!t]
+\centering\small
+\caption{Validation-derived communication targets. $\tau$ is 0.364 for 10 clients and 0.360 for 100 clients. Each cell gives the first round reaching $\tau$ and its cumulative uplink (MB); NR means not reached within the 20 rounds every run completed.}
+\label{tab:targets}
+\begin{tabular}{llrr}
+\toprule
+Method & Base & 10 clients & 100 clients \\
+\midrule
+FedAvg & --- & 9 / 125.732 & 11 / 1536.722 \\
+FedProx & --- & 7 / 97.791 & 10 / 1397.020 \\
+BDD-HFL & FedAvg & NR & NR \\
+BDD-HFL & FedProx & NR & NR \\
+FAP & FedAvg & 11 / 153.672 & 12 / 1676.424 \\
+FAP & FedProx & 11 / 153.672 & 10 / 1397.020 \\
+FedPAQ & FedAvg & NR & 10 / 176.508 \\
+DAdaQuant & FedProx & 11 / 0.561 & 10 / 4.677 \\
+\method{} & FedProx & 15 / \textbf{0.499} & 14 / \textbf{4.254} \\
+\bottomrule
+\end{tabular}
+\end{table}

@@ -1,0 +1,30 @@
+\begin{table*}[!t]
+\centering\small
+\caption{34-class CICIoT2023 results at round 20 (seed 42), in percent. Every run completed the full 20 rounds and all metrics are taken at that round, so no checkpoint selection enters the comparison. \emph{Base} is the aggregation backbone each technique is layered on. Baselines are global-test metrics; \method{} ($^\dagger$) is validation because the global-test evaluation was not performed. Uplink is the 20-round serialized total in decimal MB. Bold marks the best value in each column within a scale.}
+\label{tab:main}
+\begin{tabular}{cllrrrrr}
+\toprule
+$K$ & Method & Base & Macro-$F_1$ & Accuracy & Weighted-$F_1$ & Minority recall & Uplink (MB) \\
+\midrule
+10 & FedAvg & --- & 38.43 & 74.54 & 67.14 & 4.31 & 279.404 \\
+10 & FedProx & --- & 37.02 & 75.59 & 68.08 & 1.71 & 279.404 \\
+10 & BDD-HFL & FedAvg & 31.88 & 61.92 & 53.32 & 0.00 & 279.404 \\
+10 & BDD-HFL & FedProx & 35.45 & 73.04 & 65.32 & 0.00 & 279.404 \\
+10 & FAP & FedAvg & 37.29 & 75.46 & 67.70 & 1.37 & 279.404 \\
+10 & FAP & FedProx & 37.99 & 75.49 & 67.91 & 3.81 & 279.404 \\
+10 & FedPAQ & FedAvg & 35.74 & 71.51 & 64.85 & 0.09 & 35.302 \\
+10 & DAdaQuant & FedProx & 38.11 & \textbf{75.96} & \textbf{69.50} & 3.71 & 1.030 \\
+10 & \textbf{\method{}$^\dagger$} & FedProx & \textbf{39.17} & 75.12 & 67.71 & \textbf{14.64} & \textbf{0.666} \\
+\midrule
+100 & FedAvg & --- & 37.87 & 74.88 & 69.39 & 3.80 & 2794.040 \\
+100 & FedProx & --- & 38.00 & 74.85 & 69.43 & 3.92 & 2794.040 \\
+100 & BDD-HFL & FedAvg & 27.51 & 70.98 & 62.89 & 0.00 & 2794.040 \\
+100 & BDD-HFL & FedProx & 27.57 & 71.09 & 63.05 & 0.00 & 2794.040 \\
+100 & FAP & FedAvg & 37.82 & 74.80 & 69.32 & 2.88 & 2794.040 \\
+100 & FAP & FedProx & 37.90 & 74.70 & 69.29 & 3.06 & 2794.040 \\
+100 & FedPAQ & FedAvg & 37.43 & 74.87 & 69.18 & 4.02 & 353.016 \\
+100 & DAdaQuant & FedProx & 37.53 & 74.80 & 69.12 & 3.97 & 9.400 \\
+100 & \textbf{\method{}$^\dagger$} & FedProx & \textbf{38.91} & \textbf{78.56} & \textbf{72.96} & \textbf{4.58} & \textbf{6.077} \\
+\bottomrule
+\end{tabular}
+\end{table*}

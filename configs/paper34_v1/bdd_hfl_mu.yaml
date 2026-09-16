@@ -1,0 +1,8 @@
+experiment_id: BDD-HFL-mu
+algorithm: {name: fedprox, num_server_rounds: 20, fraction_train: 1.0, fraction_evaluate: 1.0, min_train_nodes: 10, min_evaluate_nodes: 10, min_available_nodes: 10, local_epochs: 1, batch_size: 256, learning_rate: 0.001, optimizer: sgd, momentum: 0.9, weight_decay: 0.0001, proximal_mu: 0.01}
+data: {partitions_dir: PLACEHOLDER_PARTITIONS_DIR, num_clients: 10, num_classes: 34, client_val_ratio: 0.2, seed: 42, dataset: existing_dataset, partition_file: PLACEHOLDER_PARTITION_FILE, regenerate_partition: false, source_label_space: identity, minority_fraction: 0.25}
+model: {name: dcnn_bilstm, input_dim: 46, num_classes: 34, conv_channels: "64,128,128", kernel_size: 3, lstm_hidden_size: 128, lstm_layers: 1, dropout: 0.2, norm: layer}
+technique: {name: distillation, distillation: {enabled: true, method: bdd_hfl, temperature: 4.0, target_class_weight: 1.0, non_target_class_weight: 8.0, private_kd_weight: 0.5, global_kd_weight: 0.5, private_model: same_architecture, gradient_clip_norm: 10.0, scheduler_step_size: 1, scheduler_gamma: 1.0}}
+fidelity: {classification: B, status: ready, paper: BDD-HFL 2024, official_source: "https://github.com/drafly/BDKFD", notes: "Full 34-class CICIoT2023 task; KD weights 0.5/0.5 as published."}
+results: {dir: results/baselines/bdd_hfl_mu, run_name: bdd_hfl_mu, save_model: true, save_round_checkpoints: true}
+runtime: {device: auto, parallel_clients: 1, seed: 42}

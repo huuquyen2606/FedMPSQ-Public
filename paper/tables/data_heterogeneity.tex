@@ -1,0 +1,22 @@
+\begin{table}[!tb]
+\centering\small
+\caption{Label heterogeneity of the two frozen partitions, recomputed from the per-client training counts on the 34-label contract. $\mathrm{JS}$ is the Jensen--Shannon divergence from the pooled label distribution, normalized by $\ln 2$; a label counts as present with one local training example.}
+\label{tab:heterogeneity}
+\setlength{\tabcolsep}{3pt}
+\begin{tabular}{lrr}
+\toprule
+Partition property & 10 clients & 100 clients \\
+\midrule
+Construction & source split & log-normal re-split \\
+Client size ratio (max/min) & 9.28 & 23.22 \\
+Median client training examples & 2{,}718{,}652 & 239{,}958 \\
+\midrule
+Labels per client (mean) & 16.8 & 17.6 \\
+Normalized $\mathrm{JS}$ (mean) & 0.519 & 0.365 \\
+\midrule
+Labels held by every client & 0 & 0 \\
+Clients holding a minority label & 5.8 & 57.1 \\
+Clients holding a majority label & 4.6 & 49.9 \\
+\bottomrule
+\end{tabular}
+\end{table}

@@ -1,0 +1,37 @@
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[project]
+name = "fedmps-q"
+version = "1.0.0"
+description = "Code and reproducibility artifact for the FedMPSQ paper."
+readme = "README.md"
+license = {file = "LICENSE"}
+requires-python = ">=3.11"
+dependencies = [
+  "flwr[simulation]>=1.28.0",
+  "numpy>=1.26",
+  "pandas>=2.0",
+  "scikit-learn>=1.4",
+  "torch>=2.2",
+  "tqdm>=4.66",
+  "PyYAML>=6.0",
+]
+
+[project.optional-dependencies]
+paper = [
+  "matplotlib>=3.8",
+]
+
+[tool.hatch.build.targets.wheel]
+packages = ["app", "data", "models", "training", "fl", "extensions"]
+
+[tool.flwr.app]
+publisher = "ids-tk1ll3r"
+fab-format-version = 1
+flwr-version-target = "1.32.0"
+
+[tool.flwr.app.components]
+serverapp = "app.server_app:app"
+clientapp = "app.client_app:app"

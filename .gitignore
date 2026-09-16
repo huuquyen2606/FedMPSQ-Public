@@ -1,0 +1,74 @@
+# Python caches and environments
+__pycache__/
+*.py[cod]
+*.egg-info/
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.coverage
+htmlcov/
+.venv/
+venv/
+env/
+
+# Local settings and editor files
+.env
+.env.*
+.idea/
+.vscode/
+.ipynb_checkpoints/
+.DS_Store
+Thumbs.db
+
+# Prepared/raw datasets
+data/partitions/
+data/raw/
+data/processed/
+data_partitions/
+datasets/
+*.npz
+*.npy
+*.csv
+*.parquet
+*.feather
+*.h5
+*.hdf5
+
+# Models and checkpoints
+checkpoints/
+checkpoint/
+*.pt
+*.pth
+*.ckpt
+*.safetensors
+
+# Generated experiment artifacts
+results/
+runs/
+outputs/
+artifacts/
+logs/
+reports/
+*.log
+*.bin
+*.bundle
+*.zip
+*.tar
+*.tar.gz
+
+# Build artifacts
+build/
+dist/
+*.fab
+
+# Versioned lightweight paper snapshots (metrics/configs only)
+!results/
+results/*
+!results/paper/
+!results/paper/**
+!results/tables/
+!results/tables/**
+!results/figures/
+!results/figures/**
+!results/summaries/
+!results/summaries/**

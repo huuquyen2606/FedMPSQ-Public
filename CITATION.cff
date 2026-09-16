@@ -1,0 +1,28 @@
+cff-version: 1.2.0
+message: "If you use this software, please cite the FedMPSQ paper and this repository."
+title: "FedMPSQ research code"
+type: software
+version: 1.0.0
+date-released: 2026-09-16
+url: "https://github.com/tk1ll3r/ids_fed"
+repository-code: "https://github.com/tk1ll3r/ids_fed"
+license: Apache-2.0
+authors:
+  - family-names: Nguyen
+    given-names: Van Thuong
+  - family-names: Nguyen
+    given-names: Huu Quyen
+  - family-names: Pham
+    given-names: Van-Hau
+preferred-citation:
+  type: conference-paper
+  title: "FedMPSQ: Minority-Prioritized Sparse-Quantized Federated Learning for Communication-Efficient IoT Intrusion Detection"
+  year: 2026
+  collection-title: "2026 RIVF International Conference on Computing and Communication Technologies"
+  authors:
+    - family-names: Nguyen
+      given-names: Van Thuong
+    - family-names: Nguyen
+      given-names: Huu Quyen
+    - family-names: Pham
+      given-names: Van-Hau

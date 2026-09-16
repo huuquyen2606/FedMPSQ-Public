@@ -1,0 +1,85 @@
+\begin{table}[ht]
+\centering
+\footnotesize
+\caption{Average communication cost per client per round across the two
+federation scales, in decimal KB ($10^{3}$~B).}
+\label{tab:comm}
+
+\resizebox{\columnwidth}{!}{%
+\begin{tabular}{lccrrr}
+\toprule
+\textbf{Method}
+& \textbf{\makecell{Upload\\payload}}
+& \textbf{\makecell{Download\\payload}}
+& \textbf{\makecell{Upload\\(KB)}}
+& \textbf{\makecell{Download\\(KB)}}
+& \textbf{$\Delta_{Upload}$} \\
+\midrule
+
+FedAvg
+& $|\theta_i|$
+& $|\theta_g|$
+& 1397.020
+& 1397.020
+& $438.8\times$ \\
+
+FedProx
+& $|\theta_i|$
+& $|\theta_g|$
+& 1397.020
+& 1397.020
+& $438.8\times$ \\
+
+BDD-HFL
+& $|\theta_i|$
+& $|\theta_g|$
+& 1397.020
+& 1397.020
+& $438.8\times$ \\
+
+BDD-HFL$^{\mu}$
+& $|\theta_i|$
+& $|\theta_g|$
+& 1397.020
+& 1397.020
+& $438.8\times$ \\
+
+FAP
+& $|\theta_i|$
+& $|\theta_g|$
+& 1397.020
+& 1397.020
+& $438.8\times$ \\
+
+FAP$^{\mu}$
+& $|\theta_i|$
+& $|\theta_g|$
+& 1397.020
+& 1397.020
+& $438.8\times$ \\
+
+FedPAQ
+& $|Q(\Delta\theta_i)|$
+& $|\theta_g|$
+& 176.508
+& 1397.020
+& $55.4\times$ \\
+
+DAdaQuant
+& $|Q_{b_i^t}(\Delta\theta_i)|$
+& $|\theta_g|$
+& 4.924
+& 1397.020
+& $1.55\times$ \\
+
+\textbf{FedMPSQ}
+& $|M_i^t|$
+& $|\theta_g|$
+& \textbf{3.184}
+& 1397.020
+& \textbf{$1.00\times$} \\
+
+\bottomrule
+\end{tabular}%
+}
+\end{table}
