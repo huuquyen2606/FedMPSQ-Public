@@ -9,6 +9,12 @@ Official code and lightweight reproducibility artifact for:
 
 FedMPSQ combines class-balanced and logit-calibrated local learning, task-gradient saliency, sparse update selection, low-bit quantization, error feedback, and a serialized-byte controller. The paper evaluates the method on the 34-class CICIoT2023 task with frozen partitions of **10 and 100 clients**, against eight baseline runs.
 
+## FedMPSQ workflow
+
+![One communication round of FedMPSQ](assets/fedmpsq_one_round_workflow.png)
+
+One communication round broadcasts the global model, performs local task-aware training, applies error feedback and block selection, quantizes the selected update under a strict byte budget, and aggregates the decoded client messages at the server.
+
 ## Reported results
 
 All values below are from round 20, seed 42, on the frozen client-validation splits. Upload is the measured mean serialized message per client per round in decimal KB.
